@@ -1,0 +1,566 @@
+/* 
+********** Roboto font **********
+font-family: 'Roboto', sans-serif;
+*/
+ @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+/* 
+********** Dosis font **********
+font-family: 'Dosis', sans-serif;
+ */
+ @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&display=swap');
+/* 
+********** Raleway font **********
+font-family: 'Raleway', sans-serif;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 75%;
+}
+.bg-orange{
+    background-color: #FF724C;
+    color: white;
+}
+/* ################## start navbar ################## */
+.navbar{
+    z-index: 999;
+    background-color: transparent !important;
+}
+.navbar .navbar-nav .nav-item:not(:last-child) .nav-link::before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #FF724C;
+    left: 0;
+    bottom: 0;
+    transition: width 0.5s;
+}
+.navbar .navbar-nav .nav-item .nav-link:hover::before{
+    width: 100%;
+}
+.navbar .navbar-nav .nav-item .nav-link.active::before{ /*.active must be close to .nav-link with no space*/
+    width: 100%;
+}
+.navbar .navbar-nav .nav-item:last-child .nav-link:hover{
+    color: white;
+}
+.navbar .navbar-nav .nav-item:last-child .nav-link span i{
+    transition: transform .5s;
+}
+.navbar .navbar-nav .nav-item:last-child .nav-link:hover span i{
+    transform: rotate(360deg);
+}
+.navbar .navbar-nav .nav-item:last-child .nav-link:hover span{
+    color: white !important;
+    background-color: black !important;
+}
+.navbar .navbar-nav .nav-item .nav-btn{
+    width: 8rem;
+}
+/* ################## start header ################## */
+.header{
+    background-image: url(../imgs/header/background.png);
+    background-size: cover;
+    background-attachment: fixed; /* عشان تضل الصورة ثابتة لما انزل */
+}
+
+.header .header-content span,.header .header-content p{
+    font-family: 'Raleway', sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: #313335;
+}
+.header .header-content p{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap; /*عشان ما ينزل سطر لانه لما يصر عرض الفقرة صفر بنزل الكليمة التانية بسطر*/
+    margin-left: auto; /*فضيلي جهة اليسار ووديلي كلشي جهة اليمين لانه لو نيجي نتطلع على الفقرة وقت اخدت عرض زيرو كانت ماخدة مارجن كبير فلهيك استخدمنا المارجن مش التسكست الاين*/
+    border-right: 1px solid;
+    animation: typing 3s both infinite alternate-reverse steps(28),blink .7s infinite;
+    /* عندي انيميشن اسمها تايبينج بدي ينفذها خلال 3 ثواني , البوث يعني باتجاه فوروارد وباكوارد ,انفنت يعني يعملها للمالانهاية, والاتيرنيت ريفيرس عشان يروح ويرجع */
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 314px; /*عرض الفقرة قبل ما نعمل اوفر فلو وباقي الاشياء*/
+    }
+}
+@keyframes blink{
+    from{
+        border-color: rgba(0,0,0,0);
+    }
+    to{
+        border-color: rgba(0,0,0,.5);
+    }
+}
+.header .header-content h1{
+    font-family: 'Dosis', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #212529;
+}
+.header .header-content .icon i{  /*iهون ما زبطو الخصائص الا لما استدعيت ال*/
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    transition: background-color .5s, color .5s,transform .5s;
+}
+.header .header-content .icon:nth-of-type(1) i{
+    border: #3B5999 solid 1px;
+    color: #3B5999;
+}
+.header .header-content .icon:nth-of-type(2) i{
+    border: #EA4C89 solid 1px;
+    color: #EA4C89;
+}
+.header .header-content .icon:nth-of-type(3) i{
+    border: #1769FF solid 1px;
+    color: #1769FF;
+}
+.header .header-content .icon:nth-of-type(4) i{
+    border: #0077B5 solid 1px;
+    color: #0077B5;
+}
+.header .header-content .icon:nth-of-type(5) i{
+    border: #DD4B39 solid 1px;
+    color: #DD4B39;
+}
+.header .header-content .icon:hover i{
+    color: white;
+    transform: rotate(360deg);
+}
+.header .header-content .icon:nth-of-type(1):hover i{ /*must be no space between psoudo classes*/
+    background-color: #3B5999;
+}
+.header .header-content .icon:nth-of-type(2):hover i{ 
+    background-color: #EA4C89;
+}
+.header .header-content .icon:nth-of-type(3):hover i{ 
+    background-color: #1769FF;
+}
+.header .header-content .icon:nth-of-type(4):hover i{ 
+    background-color: #0077B5;
+}
+.header .header-content .icon:nth-of-type(5):hover i{ 
+    background-color: #DD4B39;
+}
+
+/* ################## start about ################## */
+
+.about .container > .row{
+    width: 90%;
+    margin: auto;
+}
+.about .numbers{
+    background-color: #4E4E4E;
+}
+.about .numbers .number-content span{
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+.about .numbers .number-content p{
+    font-family: 'Dosis', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+.about .about-content{
+    font-family: 'Roboto', sans-serif;
+    background-color: #FF7A57;
+}
+.title span{ 
+    font-size: 15px;
+    font-weight: 500;
+}
+.title span:not(.about .about-content .title span,.contact .title span){ /*do these properties except for the title in the about section*/
+    color: #818181;
+    border-bottom: #FF7A57 solid 1px;
+}
+.title h1:not(.about .about-content .title h1,.contact .title h1){
+    color: #3B3B3B;
+}
+.title h1{
+    font-family: 'Dosis', sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+}
+.about .about-content p{
+    font-size: 14px;
+    font-weight: 400;
+}
+.about .about-button i{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: #3B3B3B;
+}
+.about .about-button span{
+    color: #3B3B3B;
+}
+.about .about-button:hover i{
+    color: #FF7A57 !important;
+}
+.about .about-button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    width: 11rem;
+}
+/* ################## start services ################## */
+.services .services-content h3{
+    font-size: 20px;
+    font-weight: 500;
+    color: #3B3B3B;
+}
+.services .services-content p{
+    font-size: 14px;
+    font-weight: 400;
+    color: #818181;
+}
+.services .services-content .services-item::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: #F3F3F3;
+    border-radius: 15px;
+    transition: bottom .5s;
+    z-index: -1;
+}
+.services .services-content .services-item:hover::after{
+    bottom: 0;
+}
+/* ################## start portfolio ################## */
+.portfolio{
+    background-color: #F3F3F3;
+}
+.portfolio .portfolio-content .nav-link{
+    font-family: 'Raleway', sans-serif;
+    color: #5F5F5F;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 20px;
+    border: #5F5F5F 1px solid;
+}
+.portfolio .portfolio-content .nav-link.active{
+    background-color: #FF724C;
+    color: white !important;
+    border: none;
+}
+.portfolio .portfolio-content .portfolio-item .portfolio-item-info .info h3{
+    font-size: 15px;
+    font-weight: 500;
+    color: #3B3B3B;
+}
+.portfolio .portfolio-content .portfolio-item .portfolio-item-info .info p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #4C4C4C;
+}
+.portfolio .portfolio-content .portfolio-item .portfolio-item-info .info{
+    line-height: 0;
+}
+.portfolio .portfolio-content .portfolio-item .portfolio-item-info i{    
+    color: #FF724C;
+}
+.portfolio .portfolio-content .portfolio-item .portfolio-item-info{
+    position: absolute;
+    bottom: 10%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s;
+}
+.portfolio .portfolio-content .portfolio-item:hover .portfolio-item-info{
+    bottom: 0;
+    opacity: 1;
+}
+.portfolio .portfolio-content .portfolio-item .overlay{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(59,59,59,0.25);
+    transform: scaleY(0);
+    transition: .5s;
+}
+.portfolio .portfolio-content .portfolio-item:hover .overlay{
+    transform: scaleY(1);
+}
+.portfolio .portfolio-content .portfolio-item .overlay i{
+    background-color: #FF724C;
+    transform: scale(0);
+    transition: .5s;
+}
+.portfolio .portfolio-content .portfolio-item:hover .overlay i{
+    transform: scale(1) rotate(360deg);
+}
+.portfolio .portfolio-content .portfolio-item .overlay i:hover{
+    color: #FF724C !important;
+    background-color: transparent;
+    border: white 1px solid;
+    cursor: pointer;
+}
+/* ################## start resume ################## */
+.resume .resume-content .resume-item .head i{
+    background-color: #FF724C;
+    color: #F3F3F3;
+    margin-top: -2%;
+    padding: 13px;
+    transition: .3s;
+    z-index: 1;
+}
+.resume .resume-content .resume-item{
+    color: #3B3B3B;
+}
+.resume .resume-content .resume-item .head h4{    
+    font-size: 20px;
+    font-weight: 500;
+}
+.resume .resume-content .resume-item .resume-item-info h5{    
+    font-size: 14px;
+    font-weight: 500;
+}
+.resume .resume-content .resume-item .resume-item-info h5 span{ 
+    font-weight: 400;
+}
+.resume .resume-content .resume-item .resume-item-info span:nth-child(2){ 
+    color: #FF724C;
+    font-size: 15px;
+    font-weight: 400;
+}
+.resume .resume-content .resume-item .resume-item-info p{ 
+    font-size: 15px;
+    font-weight: 400;
+}
+.resume .resume-content .resume-item .head::before{    
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background-color: #313335;
+    top: 30px;
+    left: 22px;
+}
+.resume .resume-content .resume-item .resume-item-info::after{    
+    content: '';
+    position: absolute;
+    padding: 5px;
+    border: #FF724C 1px solid;
+    border-radius: 50%;
+    background-color: white;
+    left: -7.5px;
+    top: 2px;
+    transition: .3s;
+}
+.resume .resume-content .resume-item .resume-item-info:not(:last-of-type):before{    
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 108%;
+    background-color: #313335;
+    left: -2px;
+    top: 10px;
+}
+.resume .resume-content .resume-item .head:hover i{    
+    background-color: #F3F3F3;
+    color: #FF724C;
+}
+.resume .resume-content .resume-item .resume-item-info:hover::after{    
+    background-color: #FF724C;
+}
+.resume .resume-content .resume-item .skill .bar{ 
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background-color: #3B3B3B;
+    left: 25px;
+    bottom: 0;
+    top: 30px;
+}
+.resume .resume-content .resume-item .skill .bar::after{ 
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 7px;
+    background-color: #FF724C;
+    left: 0;
+    border-radius: 10px;
+}
+.resume .resume-content .resume-item .skill[val="80"] .bar::after{ 
+    width: 80%;
+}
+.resume .resume-content .resume-item .skill[val="70"] .bar::after{ 
+    width: 70%;
+}
+.resume .resume-content .resume-item .skill[val="55"] .bar::after{ 
+    width: 55%;
+}
+.resume .resume-content .resume-item .skill[val="80"] h5{ 
+    width: 80%;
+}
+.resume .resume-content .resume-item .skill[val="70"] h5{ 
+    width: 70%;
+}
+.resume .resume-content .resume-item .skill[val="55"] h5{ 
+    width: 55%;
+}
+
+/* ################## start cv ################## */
+.download-cv {
+    background-image: 
+    linear-gradient(rgba(59,59,59,.75),rgba(59,59,59,.75))
+    ,
+    url(../imgs/download-cv/brandbg.png);
+    background-size: cover;
+}
+.download-cv .title h4{
+    font-family: 'Dosis', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: #F3F3F3;
+}
+.download-cv .title a.btn{
+    color: #F3F3F3;
+    border: #F3F3F3 1px solid;
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.download-cv .title a.btn:hover{
+    background-color: #FF724C;
+    border: #FF7A57 solid 1px;
+}
+
+/* ################## start testimonials ################## */
+.testimonials .client h6{
+    font-size: 15px;
+    font-weight: 500;
+    color: #313131;
+}
+.testimonials .client p{
+    font-size: 15px;
+    font-weight: 400;
+    color: #5B5B5B;
+}
+.testimonials .client .quote{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: italic;
+    color: #5B5B5B;
+    line-height: 1.7;
+    border-radius: 10px;
+}
+.testimonials .client .quote i{
+    color: #3B3B3B;
+}
+.testimonials .client .quote:hover i{
+    color: #F3F3F3;
+}
+.testimonials .client .quote:hover{
+    color: #F3F3F3;
+    background-color: #5B5B5B;
+
+}
+.testimonials .carousel-indicators .active{
+    background-color: #FF724C;
+}
+.testimonials .carousel-indicators [data-bs-target]{
+    width: 12px;
+    height: 12px;
+    border: #FF724C 1px solid;
+    border-radius: 50%;
+}
+
+/* ################## start contact ################## */
+.contact{
+    background-image:
+    linear-gradient(rgba(255,114,76,.85),rgba(255,114,76,.85))
+    ,
+    url(../imgs/contact/contactbg.png);
+    background-size: cover;
+    color: #F3F3F3;
+    background-attachment: fixed;
+}
+.contact .contact-info p{
+    font-size: 15px;
+    font-weight: 400;
+    width: 53%;
+    margin: auto;
+}
+.contact .contact-button i{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    background-color: #3B3B3B;
+}
+.contact .contact-button span{
+    color: #3B3B3B;
+}
+.contact .contact-button:hover i{
+    color: #FF7A57 !important;
+}
+.contact .contact-button{
+    font-family: 'Raleway', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    width: 11rem;
+}
+
+input:focus,textarea:focus{
+    box-shadow: none !important;
+    border: white 1px solid !important;
+}
+::placeholder{
+    color: #F3F3F3 !important;
+    text-transform: capitalize; 
+}
+/* ################## start map ################## */
+.map .map-contact-info i{
+    color: #FF724C;
+    background-color: #F3F3F3;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 12px;
+    transition: .5s;
+}
+.map .map-contact-info i:hover{
+    transform: rotate(360deg);
+    background-color: #FF724C;
+    color: #F3F3F3;
+}
+.map .map-contact-info{
+    line-height: 1;
+    bottom: 5px;
+    left: 0;
+    background-color: #282828;
+    color: #F3F3F3;
+    padding-top: 1.5rem !important;
+    padding-bottom: 2.1rem !important;
+}
+/* ################## start footer ################## */
+footer .name{
+    color: #FF724C;
+}
+footer{
+    background-color: #F3F3F3;
+    color: #818181;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+}

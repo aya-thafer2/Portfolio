@@ -1,0 +1,62 @@
+@media (max-width:991px){
+    header{
+        background-position: 50%;
+    }
+    .container{
+        width: 95%;
+    }
+    header .social{
+        gap: 0 !important;
+    }
+    header .social .icon{
+        margin-left: .5rem;
+    }
+    .about .container{
+        width: 100%;
+    }
+    .about .numbers .number-content{
+        border: none !important;
+        padding-top: 1rem !important;
+        padding-bottom: 1rem !important;
+    }
+    .about .about-content{
+        padding: 2rem !important;
+    }
+    .about .title h1,.testimonials .title h1{
+        width: 100% !important;
+        font-size: 35px;
+    }
+    .resume .resume-content .resume-item .resume-item-info .java{
+        margin-top: 1rem !important;
+    }
+}
+@media (max-width:768px){
+   
+    .portfolio .portfolio-title .title h1{
+        font-size: 43px;
+        margin-top: 1rem;
+    }
+    .download-cv{
+        text-align: center;
+    }
+    .download-cv img{
+        margin-top: 3rem;
+    }
+    .contact .contact-info p{
+        width: 90%;
+    }
+    .map{
+       position: relative;
+    }
+    .map .container{
+        width: 100%;  
+        position: relative;      
+    }
+
+    .map .map-contact-info .col-md-4:not(:first-child){
+        padding-top: 2rem !important;
+    }
+    footer .col-md-4:not(:first-child){
+        padding-top: 1rem !important;
+    }
+}
