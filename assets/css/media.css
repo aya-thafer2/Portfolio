@@ -1,4 +1,12 @@
+@media (min-width:991px) {
+    nav{
+        background-color: transparent;
+    }
+}
 @media (max-width:991px){
+    nav{
+        background-color: rgb(254, 254, 254);;
+    }
     header{
         background-position: 50%;
     }
